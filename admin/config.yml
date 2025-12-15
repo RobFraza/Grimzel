@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: RobFraza/Grimzel
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pagina’s"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "index.html"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+
+  - name: "chapters"
+    label: "Hoofdstukken"
+    folder: "chapters"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Inhoud", name: "body", widget: "markdown" }
